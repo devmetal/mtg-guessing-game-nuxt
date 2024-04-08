@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <Card />
+  <div class="flex justify-center">
+    <Card />
+  </div>
 </template>
 
 <style scoped></style>
