@@ -1,12 +1,16 @@
 <script lang="ts" setup>
-const url = "https://api.scryfall.com/cards/random?q=-t:land%20year%3E2000";
-const { data: card } = await useFetch<ScryCard>(url);
+const props = defineProps<{
+  card: ScryCard;
+}>();
 </script>
 
 <template>
-  <div class="w-80 flex flex-col justify-center">
-    <img :src="card?.image_uris?.png" class="w-full" />
-    <div class="flex gap-1 p-2">
+  <div class="w-80 flex flex-col justify-center gap-2">
+    <img :src="$props.card?.image_uris?.png" class="w-full" />
+    <p class="text-sm text-center pt-2 font-bold">
+      Guess the color by picking the right ones
+    </p>
+    <div class="flex gap-1 justify-center">
       <Symbol image="black" />
       <Symbol image="green" />
       <Symbol image="blue" />
